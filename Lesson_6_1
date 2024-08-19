@@ -1,0 +1,40 @@
+import java.util.Scanner;
+public class Lesson_6_1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите текст: ");
+        String greeting = scanner.nextLine();    //создали строку, текст введен из консоли
+
+        scanner.close();                         // закрыли сканер для чего?
+
+        printAnswer(greeting);                   // это что? Вызываем метод printAnswer?
+    }
+
+    static void printAnswer(String greeting) {    // Первый метод, создаем метод (цикл выбирающий нужный ответ)
+        String answer;                            // Объявили строковую переменную
+
+        switch (greeting) {                       // Если введенный текст совпадает с Hi
+            case "Hi":
+                answer = "Hello";                 // инициализировали переменную
+                break;
+
+            case "Bye":
+                answer = "Good bye";
+                break;
+
+            case "How are you":
+                answer = "How are your doing";
+                break;
+
+            default:
+                answer = "Unknown message";
+        }
+
+        log(answer);                             // это что? Вызываем метод Log? почему в скобочках answer? почему другая переменная?
+    }
+
+    static void log(String message) {    // Второй метод "Log".  ТОже как log (string m)
+        System.out.println(message);                     // вывести на консоль m
+    }
+}
